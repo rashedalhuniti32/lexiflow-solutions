@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | LexiFlow Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        brand: { bg: '#09090b', card: '#121215', border: '#27272a', emerald: '#10b981', emeraldHover: '#059669' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-bg text-zinc-100 antialiased selection:bg-brand-emerald selection:text-black">
 
+    <div class="fixed top-0 left-0 w-full h-[550px] bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.08)_0%,transparent_65%)] pointer-events-none -z-10"></div>
+
+    <header class="border-b border-brand-border bg-brand-bg/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-emerald shadow-[0_0_10px_#10b981]"></span>
+                <span class="text-xl font-bold tracking-tight text-white">LexiFlow Solutions<span class="text-brand-emerald">.</span></span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-zinc-400">
+                <a href="index.html" class="hover:text-white transition">Home</a>
+                <a href="services.html" class="text-white border-b-2 border-brand-emerald pb-1">Services</a>
+                <a href="cases.html" class="hover:text-white transition">Case Studies</a>
+                <a href="trust.html" class="hover:text-white transition">How We Work</a>
+                <a href="contact.html" class="hover:text-white transition">Contact</a>
+            </nav>
+            <a href="contact.html" class="hidden md:inline-block text-sm font-bold bg-brand-emerald hover:bg-brand-emeraldHover text-zinc-950 px-5 py-2.5 rounded-lg transition">
+                Let's Talk
+            </a>
+            <button id="mobileMenuBtn" class="md:hidden text-zinc-400 hover:text-white p-2 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden border-b border-brand-border bg-brand-bg px-6 py-4 space-y-4 text-base font-medium">
+            <a href="index.html" class="block text-zinc-400 hover:text-white">Home</a>
+            <a href="services.html" class="block text-brand-emerald">Services</a>
+            <a href="cases.html" class="block text-zinc-400 hover:text-white">Case Studies</a>
+            <a href="trust.html" class="block text-zinc-400 hover:text-white">How We Work</a>
+            <a href="contact.html" class="block text-zinc-400 hover:text-white">Contact</a>
+        </div>
+    </header>
+
+    <section class="pt-24 pb-20 px-6 text-center border-b border-brand-border">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6">Expert Solutions for Modern Compliance</h1>
+            <p class="text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+                We handle the heavy lifting of compliance documentation so your company can focus on growth and serving your clients.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 max-w-6xl mx-auto space-y-12">
+        <div class="p-10 rounded-3xl bg-brand-card border border-brand-border grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h2 class="text-2xl font-bold text-white mb-4">Security Audits (SOC 2 & ISO 27001)</h2>
+                <p class="text-zinc-400 leading-relaxed mb-6">
+                    Achieving global security standards is critical for winning large contracts. We organize your operational records, ensure your policies meet the standards, and build the exact document packages external auditors expect to see.
+                </p>
+                <ul class="space-y-3 text-sm text-zinc-300 font-medium">
+                    <li class="flex items-center gap-3"><span class="text-brand-emerald">✓</span> Comprehensive Document Preparation</li>
+                    <li class="flex items-center gap-3"><span class="text-brand-emerald">✓</span> Policy Review & Structuring</li>
+                    <li class="flex items-center gap-3"><span class="text-brand-emerald">✓</span> Guaranteed Auditor Readiness</li>
+                </ul>
+            </div>
+            <div class="bg-zinc-900 rounded-2xl h-full min-h-[250px] p-8 flex flex-col justify-center border border-zinc-800">
+                <p class="text-white text-lg font-bold mb-2">Why it matters for business:</p>
+                <p class="text-zinc-400 text-sm leading-relaxed">Major enterprise clients require these certifications before signing contracts. We ensure you pass smoothly.</p>
+            </div>
+        </div>
+
+        <div class="p-10 rounded-3xl bg-brand-card border border-brand-border grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="order-2 md:order-1 bg-zinc-900 rounded-2xl h-full min-h-[250px] p-8 flex flex-col justify-center border border-zinc-800">
+                <p class="text-white text-lg font-bold mb-2">Why it matters for business:</p>
+                <p class="text-zinc-400 text-sm leading-relaxed">Avoid heavy fines and legal roadblocks when expanding your services to Europe and the Middle East.</p>
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-2xl font-bold text-white mb-4">International Data Privacy</h2>
+                <p class="text-zinc-400 leading-relaxed mb-6">
+                    Navigating GDPR and regional laws like the UAE Data Law is complex. We map exactly how your business handles data and create the required privacy documents to keep you legally compliant in key markets.
+                </p>
+                <ul class="space-y-3 text-sm text-zinc-300 font-medium">
+                    <li class="flex items-center gap-3"><span class="text-brand-emerald">✓</span> Data Flow Mapping</li>
+                    <li class="flex items-center gap-3"><span class="text-brand-emerald">✓</span> Privacy Policy Formulation</li>
+                    <li class="flex items-center gap-3"><span class="text-brand-emerald">✓</span> Vendor Compliance Checks</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const btn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    </script>
+</body>
+</html>
