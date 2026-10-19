@@ -115,14 +115,3 @@
                 <span class="w-3 h-3 rounded-full bg-brand-emerald"></span>
                 <span class="font-bold text-white text-lg">LexiFlow Solutions</span>
             </div>
-            <p class="text-sm text-zinc-500">© 2026 LexiFlow Solutions. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        const btn = document.getElementById('mobileMenuBtn');
-        const menu = document.getElementById('mobileMenu');
-        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-    </script>
-</body>
-</html>
