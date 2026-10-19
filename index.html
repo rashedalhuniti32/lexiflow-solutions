@@ -3,73 +3,554 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LexiFlow Solutions | Continuous EvidenceOps & Audit Readiness</title>
-    <!-- Tailwind CSS CDN -->
+    <title>LexiFlow Solutions | Managed Continuous EvidenceOps & Audit Readiness</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#09090b',
+                            card: '#121215',
+                            border: '#27272a',
+                            emerald: '#10b981',
+                            emeraldHover: '#059669',
+                            muted: '#a1a1aa'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
         .radial-glow {
-            background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.15) 0%, transparent 65%);
+            background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 70%);
+        }
+        .code-box {
+            background: rgba(18, 18, 21, 0.85);
+            backdrop-filter: blur(12px);
         }
     </style>
 </head>
-<body class="bg-[#09090b] text-zinc-100 antialiased selection:bg-emerald-500 selection:text-black">
+<body class="bg-brand-bg text-zinc-100 antialiased selection:bg-brand-emerald selection:text-black">
 
-    <!-- Top Glow Effect -->
-    <div class="fixed top-0 left-0 w-full h-[500px] radial-glow pointer-events-none -z-10"></div>
+    <!-- Atmospheric Glow -->
+    <div class="fixed top-0 left-0 w-full h-[600px] radial-glow pointer-events-none -z-10"></div>
 
-    <!-- Navigation -->
-    <header class="border-b border-zinc-800/80 bg-[#09090b]/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-2.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_10px_#10b981]"></span>
-                <span class="text-lg font-bold tracking-tight text-white">LexiFlow<span class="text-emerald-400">.</span></span>
-            </div>
-            <nav class="hidden md:flex space-x-8 text-xs font-semibold text-zinc-400 uppercase tracking-wider">
-                <a href="#services" class="hover:text-emerald-400 transition">Services</a>
-                <a href="#frameworks" class="hover:text-emerald-400 transition">Frameworks</a>
-                <a href="#pipeline" class="hover:text-emerald-400 transition">Methodology</a>
-                <a href="#security" class="hover:text-emerald-400 transition">Security</a>
-                <a href="#faq" class="hover:text-emerald-400 transition">FAQ</a>
+    <!-- Top Notice Banner -->
+    <div class="border-b border-zinc-800 bg-zinc-950/80 px-4 py-2 text-center text-xs text-zinc-400 font-mono">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
+        Q2/Q3 2026 Audit Cycles: Book your 14-day EvidenceOps sprint before filing deadlines.
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="border-b border-zinc-800/80 bg-brand-bg/85 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-2.5">
+                <span class="w-3 h-3 rounded-full bg-brand-emerald shadow-[0_0_12px_#10b981]"></span>
+                <span class="text-xl font-bold tracking-tight text-white">LexiFlow<span class="text-brand-emerald">.</span></span>
+                <span class="text-[10px] font-mono uppercase bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded border border-zinc-700 ml-2">EvidenceOps</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex space-x-7 text-xs font-semibold text-zinc-400 uppercase tracking-wider">
+                <a href="#services" class="hover:text-brand-emerald transition">Services</a>
+                <a href="#frameworks" class="hover:text-brand-emerald transition">Frameworks</a>
+                <a href="#pipeline" class="hover:text-brand-emerald transition">Pipeline</a>
+                <a href="#deliverables" class="hover:text-brand-emerald transition">Deliverables</a>
+                <a href="#security" class="hover:text-brand-emerald transition">Security & Zero-PII</a>
+                <a href="#faq" class="hover:text-brand-emerald transition">FAQ</a>
             </nav>
-            <a href="#contact" class="text-xs uppercase tracking-wider font-bold bg-emerald-500 hover:bg-emerald-400 text-zinc-950 px-4 py-2 rounded-lg transition duration-200 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                Audit Consultation
+
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="#contact" class="text-xs uppercase tracking-wider font-bold bg-brand-emerald hover:bg-brand-emeraldHover text-zinc-950 px-4 py-2.5 rounded-lg transition duration-200 shadow-[0_0_15px_rgba(16,185,129,0.25)]">
+                    Book Audit Sprint
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobileMenuBtn" class="lg:hidden text-zinc-400 hover:text-white focus:outline-none p-2" aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden border-b border-zinc-800 bg-brand-bg px-6 py-4 space-y-3 text-sm font-medium">
+            <a href="#services" class="block text-zinc-300 hover:text-brand-emerald py-1">Services</a>
+            <a href="#frameworks" class="block text-zinc-300 hover:text-brand-emerald py-1">Frameworks</a>
+            <a href="#pipeline" class="block text-zinc-300 hover:text-brand-emerald py-1">Pipeline</a>
+            <a href="#deliverables" class="block text-zinc-300 hover:text-brand-emerald py-1">Deliverables</a>
+            <a href="#security" class="block text-zinc-300 hover:text-brand-emerald py-1">Security & Zero-PII</a>
+            <a href="#faq" class="block text-zinc-300 hover:text-brand-emerald py-1">FAQ</a>
+            <a href="#contact" class="block w-full text-center mt-3 text-xs uppercase tracking-wider font-bold bg-brand-emerald text-zinc-950 py-2.5 rounded-lg">
+                Book Audit Sprint
             </a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-24 pb-20 px-6 border-b border-zinc-900 text-center relative">
-        <div class="max-w-4xl mx-auto">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 text-emerald-400 text-xs font-medium mb-6">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Managed EvidenceOps & Fast-Track Audit Readiness</span>
+    <section class="pt-20 pb-20 px-6 border-b border-zinc-900 relative">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 text-emerald-400 text-xs font-mono font-medium mb-8">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Continuous Audit Readiness & Managed Evidence Collection
             </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-6">
-                Stop Chasing Screenshots. <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
-                    Close Audits on Autopilot.
-                </span>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.12] mb-6">
+                Never Pull a Manual Screenshot for an Auditor Again.
             </h1>
-            <p class="text-base md:text-lg text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-                LexiFlow eliminates the administrative burden on your engineering team. We extract, sanitize, and assemble regulatory-grade audit binders for regional and global compliance.
+            <p class="text-base sm:text-xl text-zinc-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+                LexiFlow sits directly between engineering infrastructure and compliance binders. We deploy read-only evidence pipelines to extract, structure, and sanitize technical proofs for <span class="text-white font-semibold">ISO 27001, PDPL, and enterprise vendor due diligence</span>.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold text-sm tracking-wide transition shadow-[0_0_20px_rgba(16,185,129,0.25)]">
-                    Start Your Readiness Sprint
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-emerald hover:bg-brand-emeraldHover text-zinc-950 font-bold text-sm tracking-wide transition shadow-[0_0_25px_rgba(16,185,129,0.3)]">
+                    Schedule 14-Day Audit Sprint
                 </a>
-                <a href="#frameworks" class="w-full sm:w-auto px-8 py-3.5 rounded-lg border border-zinc-800 hover:border-zinc-700 bg-zinc-900/60 text-zinc-300 font-semibold text-sm transition">
-                    Supported Frameworks
+                <a href="#deliverables" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-zinc-800 hover:border-zinc-700 bg-brand-card text-zinc-300 font-semibold text-sm transition">
+                    Inspect Sample Audit Deliverables
                 </a>
+            </div>
+        </div>
+
+        <!-- System Pipeline Architecture Graphic -->
+        <div class="max-w-4xl mx-auto mt-14 rounded-2xl border border-zinc-800 code-box p-6 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-3 mb-4 text-xs font-mono text-zinc-400">
+                <div class="flex items-center space-x-2">
+                    <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                    <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                    <span class="ml-2 text-zinc-300">lexiflow-audit-pipeline.sh</span>
+                </div>
+                <span class="text-emerald-400">status: verified_active</span>
+            </div>
+            <div class="font-mono text-xs sm:text-sm text-zinc-300 space-y-2 overflow-x-auto text-left py-2">
+                <p class="text-zinc-500">// 1. Hooking into client metadata layer (Read-Only IAM)</p>
+                <p><span class="text-emerald-400">CONNECT</span> aws:iam::access-reports --filter="MFA_ENABLED=true" --sanitize=PII</p>
+                <p><span class="text-emerald-400">FETCH</span> github:audit-log --events="branch_protection,pr_review" --range="90_DAYS"</p>
+                <p><span class="text-emerald-400">VALIDATE</span> gsuite:admin-log --service="2fa_enforcement,session_timeout"</p>
+                <p class="text-zinc-500">// 2. Auto-indexing into structured compliance matrix</p>
+                <p class="text-cyan-400">MAP_CONTROL -> ISO_27001_2022::A.8.5 (Secure Authentication) [EVIDENCE_LOCKED]</p>
+                <p class="text-emerald-400">✔ Output compiled: /client-vault/2026-audit-binder.pdf (SHA256: e3b0c44...)</p>
             </div>
         </div>
     </section>
 
-    <!-- Metrics / Operational Value Banner -->
-    <section class="border-b border-zinc-900 bg-zinc-950/50 py-10 px-6">
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div class="p-4 rounded-xl border border-zinc-900 bg-zinc-900
+    <!-- Operational KPI Metrics -->
+    <section class="border-b border-zinc-900 bg-zinc-950/40 py-10 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="p-4 border-r border-zinc-900 last:border-none">
+                <p class="text-3xl lg:text-4xl font-extrabold text-white font-mono">70%</p>
+                <p class="text-xs text-zinc-400 mt-1 uppercase font-semibold tracking-wider">Dev Time Saved</p>
+            </div>
+            <div class="p-4 border-r border-zinc-900 last:border-none">
+                <p class="text-3xl lg:text-4xl font-extrabold text-brand-emerald font-mono">Zero</p>
+                <p class="text-xs text-zinc-400 mt-1 uppercase font-semibold tracking-wider">Customer Data Extracted</p>
+            </div>
+            <div class="p-4 border-r border-zinc-900 last:border-none">
+                <p class="text-3xl lg:text-4xl font-extrabold text-white font-mono">14 Days</p>
+                <p class="text-xs text-zinc-400 mt-1 uppercase font-semibold tracking-wider">Sprint Delivery Time</p>
+            </div>
+            <div class="p-4">
+                <p class="text-3xl lg:text-4xl font-extrabold text-brand-emerald font-mono">100%</p>
+                <p class="text-xs text-zinc-400 mt-1 uppercase font-semibold tracking-wider">Client-Hosted Execution</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Deep-Dive -->
+    <section id="services" class="py-24 px-6 border-b border-zinc-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-xs uppercase font-bold text-brand-emerald tracking-wider font-mono">Core Practice Areas</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white mt-2">Engineered Evidence Solutions</h3>
+                <p class="text-zinc-400 text-sm max-w-xl mx-auto mt-3">We don't sell another dashboard you have to configure. We do the actual groundwork.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-8 rounded-2xl border border-zinc-800 bg-brand-card hover:border-brand-emerald/50 transition">
+                    <span class="text-xs font-mono font-bold text-brand-emerald bg-emerald-950/60 border border-emerald-800/40 px-3 py-1 rounded">01 / SECURITY</span>
+                    <h4 class="text-xl font-bold text-white mt-5 mb-3">ISO 27001:2022 Evidence Engineering</h4>
+                    <p class="text-sm text-zinc-400 leading-relaxed mb-6">
+                        Complete structuring of Annex A technical controls. We extract and time-stamp logs for user provisioning, termination tickets, code peer-reviews, and quarterly backup restoration tests.
+                    </p>
+                    <ul class="text-xs text-zinc-400 space-y-2 font-mono border-t border-zinc-800 pt-4">
+                        <li class="flex items-center gap-2"><span class="text-brand-emerald">✔</span> IAM & Access Control Registers</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-emerald">✔</span> Cryptographic Policy Verifications</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-emerald">✔</span> Incident Response Drill Evidence</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-8 rounded-2xl border border-zinc-800 bg-brand-card hover:border-brand-emerald/50 transition">
+                    <span class="text-xs font-mono font-bold text-brand-emerald bg-emerald-950/60 border border-emerald-800/40 px-3 py-1 rounded">02 / PRIVACY</span>
+                    <h4 class="text-xl font-bold text-white mt-5 mb-3">Regional Data Protection (PDPL & GDPR)</h4>
+                    <p class="text-sm text-zinc-400 leading-relaxed mb-6">
+                        Tailored compliance for Jordanian PDPL (Law No. 24 of 2023), Saudi PDPL (SDAIA), and GDPR. We map cross-border data transfer mechanisms, vendor processors, and data subject rights registries.
+                    </p>
+                    <ul class="text-xs text-zinc-400 space-y-2 font-mono border-t border-zinc-800 pt-4">
+                        <li class="flex items-center gap-2"><span class="text-brand-emerald">✔</span> Automated ROPA Documentation</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-emerald">✔</span> Sub-Processor Diligence Trackers</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-emerald">✔</span> Data Retention & Destruction Proofs</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-8 rounded-2xl border border-zinc-800 bg-brand-card hover:border-brand-emerald/50 transition">
+                    <span class="text-xs font-mono font-bold text-brand-emerald bg-emerald-950/60 border border-emerald-800/40 px-3 py-1 rounded">03 / PROCUREMENT</span>
+                    <h4 class="text-xl font-bold text-white mt-5 mb-3">Vendor Security Diligence & CAIQ</h4>
+                    <p class="text-sm text-zinc-400 leading-relaxed mb-6">
+                        Enterprise clients and international donors stall procurement over complex security questionnaires. We populate, reference, and package your security posture within 5 business days.
+                    </p>
+                    <ul class="text-xs text-zinc-400 space-y-2 font-mono border-t border-zinc-800 pt-4">
+                        <li class="flex items-center gap-2"><span class="text-brand-emerald">✔</span> Standardized CAIQ v4 Responses</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-emerald">✔</span> SIG Lite Package Assembly</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-emerald">✔</span> Procurement Unblocking Dossiers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Frameworks Detailed Matrix -->
+    <section id="frameworks" class="py-24 px-6 border-b border-zinc-900 bg-zinc-950/40">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-xs uppercase font-bold text-brand-emerald tracking-wider font-mono">Technical Scope</h2>
+                <h3 class="text-3xl font-bold text-white mt-2">Frameworks Covered in Detail</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 rounded-2xl border border-zinc-800 bg-brand-card">
+                    <h4 class="text-lg font-bold text-white mb-2 flex items-center justify-between">
+                        <span>ISO/IEC 27001:2022 Technical Clauses</span>
+                        <span class="text-xs text-brand-emerald font-mono">Global Standard</span>
+                    </h4>
+                    <p class="text-xs text-zinc-400 mb-6">We extract operational proof for the most scrutinized Annex A controls:</p>
+                    <div class="space-y-3 text-xs font-mono text-zinc-300">
+                        <div class="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800 flex justify-between items-center">
+                            <span>A.5.15 Access Control & Privilege Reviews</span>
+                            <span class="text-emerald-400 text-[10px]">Automated Proof</span>
+                        </div>
+                        <div class="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800 flex justify-between items-center">
+                            <span>A.8.8 Management of Technical Vulnerabilities</span>
+                            <span class="text-emerald-400 text-[10px]">Patch Logs Linked</span>
+                        </div>
+                        <div class="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800 flex justify-between items-center">
+                            <span>A.8.28 Secure Coding & Branch Approvals</span>
+                            <span class="text-emerald-400 text-[10px]">Git History Indexed</span>
+                        </div>
+                        <div class="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800 flex justify-between items-center">
+                            <span>A.8.13 Information Backup Verification</span>
+                            <span class="text-emerald-400 text-[10px]">Recovery Drill Proof</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl border border-zinc-800 bg-brand-card">
+                    <h4 class="text-lg font-bold text-white mb-2 flex items-center justify-between">
+                        <span>Regional Data Privacy Mandates</span>
+                        <span class="text-xs text-brand-emerald font-mono">Jordan / KSA / UAE</span>
+                    </h4>
+                    <p class="text-xs text-zinc-400 mb-6">Built to comply with the enforcement timelines of regional regulators:</p>
+                    <div class="space-y-3 text-xs font-mono text-zinc-300">
+                        <div class="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800 flex justify-between items-center">
+                            <span>Jordanian PDPL (Law 24 of 2023) Articles 5-9</span>
+                            <span class="text-emerald-400 text-[10px]">Consent Registers</span>
+                        </div>
+                        <div class="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800 flex justify-between items-center">
+                            <span>Saudi PDPL Cross-Border Transfer Assessment</span>
+                            <span class="text-emerald-400 text-[10px]">SDAIA Mapped</span>
+                        </div>
+                        <div class="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800 flex justify-between items-center">
+                            <span>Data Protection Officer (DPO) Audit Registry</span>
+                            <span class="text-emerald-400 text-[10px]">Pre-configured</span>
+                        </div>
+                        <div class="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800 flex justify-between items-center">
+                            <span>Subject Access Request (DSAR) SLA Tracker</span>
+                            <span class="text-emerald-400 text-[10px]">14-Day SLA Compliant</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Pipeline (14-Day Sprint) -->
+    <section id="pipeline" class="py-24 px-6 border-b border-zinc-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-xs uppercase font-bold text-brand-emerald tracking-wider font-mono">Methodology</h2>
+                <h3 class="text-3xl font-bold text-white mt-2">The 14-Day Readiness Sprint</h3>
+                <p class="text-xs text-zinc-400 mt-2">Predictable milestones from initial scoping to external auditor submission.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl border border-zinc-800 bg-brand-card">
+                    <span class="text-xs font-mono text-brand-emerald font-bold">DAYS 01 – 03</span>
+                    <h5 class="text-base font-bold text-white mt-3 mb-2">1. Scope & Gap Audit</h5>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        We review your identity providers (Google/Okta), source control (GitHub/GitLab), and cloud providers to identify missing compliance artifacts.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-zinc-800 bg-brand-card">
+                    <span class="text-xs font-mono text-brand-emerald font-bold">DAYS 04 – 07</span>
+                    <h5 class="text-base font-bold text-white mt-3 mb-2">2. Read-Only Extraction</h5>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Setting up read-only API connectors. We extract access review logs, MFA status, and retention logs directly to your secure workspace.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-zinc-800 bg-brand-card">
+                    <span class="text-xs font-mono text-brand-emerald font-bold">DAYS 08 – 11</span>
+                    <h5 class="text-base font-bold text-white mt-3 mb-2">3. Evidence Synthesis</h5>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Sanitization of sensitive PII, indexing logs against control requirements, and building cross-referenced digital dossiers.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-zinc-800 bg-brand-card">
+                    <span class="text-xs font-mono text-brand-emerald font-bold">DAYS 12 – 14</span>
+                    <h5 class="text-base font-bold text-white mt-3 mb-2">4. Auditor Sign-Off</h5>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Handover of the finalized audit package to your leadership and external certification body. Zero pending auditor questions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tangible Deliverables Section -->
+    <section id="deliverables" class="py-24 px-6 border-b border-zinc-900 bg-zinc-950/40">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-xs uppercase font-bold text-brand-emerald tracking-wider font-mono">Tangible Outputs</h2>
+                <h3 class="text-3xl font-bold text-white mt-2">What You Actually Receive</h3>
+                <p class="text-xs text-zinc-400 mt-2">Every engagement yields permanent, defensible documentation owned 100% by your team.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl border border-zinc-800 bg-brand-card flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-800/40 flex items-center justify-center text-emerald-400 font-mono font-bold mb-4">PDF</div>
+                        <h4 class="text-lg font-bold text-white mb-2">Master Audit Binder</h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            A hyperlinked, indexed master document structured to match the exact order of ISO or privacy auditor checklists.
+                        </p>
+                    </div>
+                    <span class="text-[11px] font-mono text-emerald-400 mt-4">✓ Includes SHA-256 Timestamps</span>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-zinc-800 bg-brand-card flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-800/40 flex items-center justify-center text-emerald-400 font-mono font-bold mb-4">CSV</div>
+                        <h4 class="text-lg font-bold text-white mb-2">Access & Permissions Matrix</h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Complete reconciliation between HR active payroll and administrative privileges across cloud, database, and repository accounts.
+                        </p>
+                    </div>
+                    <span class="text-[11px] font-mono text-emerald-400 mt-4">✓ Zero Orphan Accounts</span>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-zinc-800 bg-brand-card flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-800/40 flex items-center justify-center text-emerald-400 font-mono font-bold mb-4">DOC</div>
+                        <h4 class="text-lg font-bold text-white mb-2">Operational ROPA Register</h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Formal Record of Processing Activities required under GDPR and regional privacy laws, defining legal bases and data retention rules.
+                        </p>
+                    </div>
+                    <span class="text-[11px] font-mono text-emerald-400 mt-4">✓ Regulatory Defense Ready</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & Zero-PII Guarantees -->
+    <section id="security" class="py-24 px-6 border-b border-zinc-900">
+        <div class="max-w-4xl mx-auto rounded-3xl border border-zinc-800 bg-brand-card p-8 md:p-14">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                <h3 class="text-2xl font-bold text-white">Our Security & Non-Invasive Operating Principles</h3>
+            </div>
+            <p class="text-sm text-zinc-400 leading-relaxed mb-8">
+                We believe compliance readiness should never introduce operational or security risks. Our team adheres to strict technical constraints during every sprint:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs text-zinc-300 font-mono">
+                <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800">
+                    <p class="font-bold text-emerald-400 mb-1">1. Read-Only Access Only</p>
+                    <p class="text-zinc-400">We never request write, modify, or administrative execution privileges on any system.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800">
+                    <p class="font-bold text-emerald-400 mb-1">2. Zero PII Data Extraction</p>
+                    <p class="text-zinc-400">We inspect metadata, configurations, and logs. User database tables and customer records are never viewed or extracted.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800">
+                    <p class="font-bold text-emerald-400 mb-1">3. Client-Hosted Environment</p>
+                    <p class="text-zinc-400">All scripts and binders run inside your designated cloud or Google Workspace drive.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800">
+                    <p class="font-bold text-emerald-400 mb-1">4. Bilateral Non-Disclosure (NDA)</p>
+                    <p class="text-zinc-400">Work commences only following a signed, comprehensive mutual non-disclosure agreement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive FAQ Section -->
+    <section id="faq" class="py-24 px-6 border-b border-zinc-900 bg-zinc-950/40">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-xs uppercase font-bold text-brand-emerald tracking-wider font-mono">Clarity</h2>
+                <h3 class="text-3xl font-bold text-white mt-2">Frequently Asked Questions</h3>
+            </div>
+
+            <div class="space-y-4">
+                <div class="border border-zinc-800 rounded-xl bg-brand-card overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 font-semibold text-white flex justify-between items-center focus:outline-none">
+                        <span>Why hire LexiFlow instead of buying a software license like Vanta or Drata?</span>
+                        <span class="faq-icon text-brand-emerald text-xl font-mono">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-xs text-zinc-400 leading-relaxed border-t border-zinc-800/60 pt-4">
+                        Software tools only provide a dashboard with hundreds of empty checkboxes. Your engineers still have to configure the integrations, run access reviews, write security policies, and explain discrepancies to auditors. LexiFlow provides the operational hands: we execute the entire workflow, extract proofs, build the dossiers, and deliver audit binders directly.
+                    </div>
+                </div>
+
+                <div class="border border-zinc-800 rounded-xl bg-brand-card overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 font-semibold text-white flex justify-between items-center focus:outline-none">
+                        <span>Are you an accredited certification body?</span>
+                        <span class="faq-icon text-brand-emerald text-xl font-mono">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-xs text-zinc-400 leading-relaxed border-t border-zinc-800/60 pt-4">
+                        No. According to international standards (ISO/IEC 17021), an organization cannot prepare evidence and issue the formal certification itself without a conflict of interest. We serve as your internal evidence engineering partner to ensure that when your independent certifying auditor (e.g., TÜV, BSI, PwC) arrives, your evidence is airtight and approved on first pass.
+                    </div>
+                </div>
+
+                <div class="border border-zinc-800 rounded-xl bg-brand-card overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 font-semibold text-white flex justify-between items-center focus:outline-none">
+                        <span>How much engineering time does our team need to allocate?</span>
+                        <span class="faq-icon text-brand-emerald text-xl font-mono">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-xs text-zinc-400 leading-relaxed border-t border-zinc-800/60 pt-4">
+                        Typically less than 3 to 5 total hours over the 14-day sprint. Your team's involvement is limited to granting read-only credentials on Day 4, answering a 30-minute scoping questionnaire, and performing a final 30-minute review on Day 14.
+                    </div>
+                </div>
+
+                <div class="border border-zinc-800 rounded-xl bg-brand-card overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 font-semibold text-white flex justify-between items-center focus:outline-none">
+                        <span>Can we engage LexiFlow for local Jordanian or Saudi compliance only?</span>
+                        <span class="faq-icon text-brand-emerald text-xl font-mono">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-xs text-zinc-400 leading-relaxed border-t border-zinc-800/60 pt-4">
+                        Yes. We have dedicated operational templates tailored specifically for the Jordanian Personal Data Protection Law (Law No. 24 of 2023) and the Saudi National Data Governance framework (SDAIA), ensuring complete compliance with local data localization and regulatory filing requirements.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Contact Form -->
+    <section id="contact" class="py-24 px-6">
+        <div class="max-w-xl mx-auto">
+            <div class="text-center mb-10">
+                <div class="inline-block px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-800/40 text-emerald-400 text-xs font-mono mb-3">Direct Consultation</div>
+                <h3 class="text-3xl font-bold text-white">Start Your 14-Day Audit Sprint</h3>
+                <p class="text-xs text-zinc-400 mt-2">Brief us on your upcoming audit deadline or framework requirement.</p>
+            </div>
+
+            <!-- Form: Direct POST to Formspree -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Full Name</label>
+                    <input type="text" name="name" required class="w-full bg-brand-card border border-zinc-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-emerald transition" placeholder="e.g. Tariq Mansour">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Work Email</label>
+                    <input type="email" name="email" required class="w-full bg-brand-card border border-zinc-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-emerald transition" placeholder="name@company.com">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Target Framework / Scope</label>
+                    <select name="framework" class="w-full bg-brand-card border border-zinc-800 rounded-xl px-4 py-3.5 text-sm text-zinc-300 focus:outline-none focus:border-brand-emerald transition">
+                        <option>ISO 27001:2022 Evidence Engineering</option>
+                        <option>Jordanian PDPL / Saudi PDPL Compliance</option>
+                        <option>Vendor Due Diligence Questionnaire (CAIQ/SIG)</option>
+                        <option>Full Readiness Sprint (Multi-Framework)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Upcoming Audit Timeline / Bottlenecks</label>
+                    <textarea name="message" rows="4" required class="w-full bg-brand-card border border-zinc-800 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brand-emerald transition" placeholder="Tell us when your audit is scheduled or which logs are currently blocking you..."></textarea>
+                </div>
+                <div class="flex items-center text-[11px] text-zinc-400 space-x-2 pt-1 font-mono">
+                    <span class="text-brand-emerald">🔒</span>
+                    <span>Protected under mutual confidentiality principles.</span>
+                </div>
+                <button type="submit" class="w-full py-4 rounded-xl bg-brand-emerald hover:bg-brand-emeraldHover text-zinc-950 font-bold text-sm tracking-wide transition shadow-[0_0_25px_rgba(16,185,129,0.25)]">
+                    Submit Audit Sprint Request
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-900 py-12 px-6 text-center text-xs text-zinc-600 bg-zinc-950">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-brand-emerald"></span>
+                <span class="font-bold text-zinc-400">LexiFlow Solutions</span>
+                <span class="text-zinc-600">| EvidenceOps Advisory</span>
+            </div>
+            <p>© 2026 LexiFlow Solutions. All rights reserved.</p>
+            <p class="text-zinc-600 max-w-sm text-left md:text-right">LexiFlow provides operational preparation and evidence synthesis. We do not replace accredited certification bodies.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript Logic -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Interactive Accordion for FAQ
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.faq-icon');
+
+                // Toggle visibility
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.textContent = '−';
+                    icon.classList.add('text-white');
+                } else {
+                    content.classList.add('hidden');
+                    icon.textContent = '+';
+                    icon.classList.remove('text-white');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
