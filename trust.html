@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How We Work | LexiFlow Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        brand: { bg: '#09090b', card: '#121215', border: '#27272a', emerald: '#10b981', emeraldHover: '#059669' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-bg text-zinc-100 antialiased selection:bg-brand-emerald selection:text-black">
 
+    <div class="fixed top-0 left-0 w-full h-[550px] bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.08)_0%,transparent_65%)] pointer-events-none -z-10"></div>
+
+    <header class="border-b border-brand-border bg-brand-bg/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-emerald shadow-[0_0_10px_#10b981]"></span>
+                <span class="text-xl font-bold tracking-tight text-white">LexiFlow Solutions<span class="text-brand-emerald">.</span></span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-zinc-400">
+                <a href="index.html" class="hover:text-white transition">Home</a>
+                <a href="services.html" class="hover:text-white transition">Services</a>
+                <a href="cases.html" class="hover:text-white transition">Case Studies</a>
+                <a href="trust.html" class="text-white border-b-2 border-brand-emerald pb-1">How We Work</a>
+                <a href="contact.html" class="hover:text-white transition">Contact</a>
+            </nav>
+            <a href="contact.html" class="hidden md:inline-block text-sm font-bold bg-brand-emerald hover:bg-brand-emeraldHover text-zinc-950 px-5 py-2.5 rounded-lg transition">
+                Let's Talk
+            </a>
+            <button id="mobileMenuBtn" class="md:hidden text-zinc-400 hover:text-white p-2 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden border-b border-brand-border bg-brand-bg px-6 py-4 space-y-4 text-base font-medium">
+            <a href="index.html" class="block text-zinc-400 hover:text-white">Home</a>
+            <a href="services.html" class="block text-zinc-400 hover:text-white">Services</a>
+            <a href="cases.html" class="block text-zinc-400 hover:text-white">Case Studies</a>
+            <a href="trust.html" class="block text-brand-emerald">How We Work</a>
+            <a href="contact.html" class="block text-zinc-400 hover:text-white">Contact</a>
+        </div>
+    </header>
+
+    <section class="pt-24 pb-16 px-6 text-center border-b border-brand-border">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6">Built on absolute trust.</h1>
+            <p class="text-lg text-zinc-400 leading-relaxed">
+                We operate as a seamless extension of your team. We gather the evidence you need without ever putting your proprietary data or customer information at risk.
+            </p>
+        </div>
+    </section>
+
+    <!-- Security Rules -->
+    <section class="py-20 px-6 max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold text-white mb-10 text-center">Our Non-Negotiable Rules</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-8 rounded-2xl bg-brand-card border border-brand-border">
+                <div class="w-12 h-12 bg-emerald-950/50 rounded-xl flex items-center justify-center text-brand-emerald mb-6 text-xl font-bold">1</div>
+                <h3 class="text-lg font-bold text-white mb-2">Read-Only Access</h3>
+                <p class="text-sm text-zinc-400 leading-relaxed">We only require viewing permissions to your administrative settings. We cannot change your code, alter settings, or disrupt your live environment.</p>
+            </div>
+            <div class="p-8 rounded-2xl bg-brand-card border border-brand-border">
+                <div class="w-12 h-12 bg-emerald-950/50 rounded-xl flex items-center justify-center text-brand-emerald mb-6 text-xl font-bold">2</div>
+                <h3 class="text-lg font-bold text-white mb-2">Zero Customer Data (Zero PII)</h3>
+                <p class="text-sm text-zinc-400 leading-relaxed">We look at system configurations and access logs. We never view, extract, or store your users' personal identities or database records.</p>
+            </div>
+            <div class="p-8 rounded-2xl bg-brand-card border border-brand-border">
+                <div class="w-12 h-12 bg-emerald-950/50 rounded-xl flex items-center justify-center text-brand-emerald mb-6 text-xl font-bold">3</div>
+                <h3 class="text-lg font-bold text-white mb-2">No New Software</h3>
+                <p class="text-sm text-zinc-400 leading-relaxed">We don't force you to install heavy agents on your servers. We use simple, deterministic connections (like Make/n8n workflows) that map directly to your existing tools.</p>
+            </div>
+            <div class="p-8 rounded-2xl bg-brand-card border border-brand-border">
+                <div class="w-12 h-12 bg-emerald-950/50 rounded-xl flex items-center justify-center text-brand-emerald mb-6 text-xl font-bold">4</div>
+                <h3 class="text-lg font-bold text-white mb-2">Clear Accountability</h3>
+                <p class="text-sm text-zinc-400 leading-relaxed">We act as your operational facilitators to build the perfect evidence file. The final certification is always issued by your accredited third-party auditor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14-Day Sprint Timeline -->
+    <section class="py-20 px-6 border-t border-brand-border bg-zinc-950/40">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">The 14-Day Sprint</h2>
+            <div class="space-y-6">
+                <div class="flex flex-col md:flex-row gap-6 bg-brand-card p-6 rounded-2xl border border-brand-border items-start md:items-center">
+                    <div class="text-brand-emerald font-bold text-sm whitespace-nowrap md:w-32">Days 1 - 3</div>
+                    <div>
+                        <h4 class="text-white font-bold mb-1">Gap Assessment</h4>
+                        <p class="text-sm text-zinc-400">We map your current systems against the audit requirements to see exactly what evidence is missing.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-6 bg-brand-card p-6 rounded-2xl border border-brand-border items-start md:items-center">
+                    <div class="text-brand-emerald font-bold text-sm whitespace-nowrap md:w-32">Days 4 - 7</div>
+                    <div>
+                        <h4 class="text-white font-bold mb-1">Evidence Gathering</h4>
+                        <p class="text-sm text-zinc-400">Using read-only access, we quietly collect the required logs and screenshots from your platforms (AWS, Google Workspace, GitHub).</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-6 bg-brand-card p-6 rounded-2xl border border-brand-border items-start md:items-center">
+                    <div class="text-brand-emerald font-bold text-sm whitespace-nowrap md:w-32">Days 8 - 11</div>
+                    <div>
+                        <h4 class="text-white font-bold mb-1">Organizing & Formatting</h4>
+                        <p class="text-sm text-zinc-400">We sanitize the data, remove any sensitive PII, and organize everything into a beautifully structured binder.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-6 bg-brand-card p-6 rounded-2xl border border-brand-border items-start md:items-center">
+                    <div class="text-brand-emerald font-bold text-sm whitespace-nowrap md:w-32">Days 12 - 14</div>
+                    <div>
+                        <h4 class="text-white font-bold mb-1">Final Handover</h4>
+                        <p class="text-sm text-zinc-400">You receive a complete, auditor-ready package. You submit it, you pass, and your business moves forward.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-brand-border py-12 px-6 bg-brand-bg text-center md:text-left">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <span class="w-3 h-3 rounded-full bg-brand-emerald"></span>
+                <span class="font-bold text-white text-lg">LexiFlow Solutions</span>
+            </div>
+            <p class="text-sm text-zinc-500">© 2026 LexiFlow Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    </script>
+</body>
+</html>
